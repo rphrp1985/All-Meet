@@ -1,0 +1,58 @@
+com/google/mlkit/samples/vision/digitalink/StrokeManager.java
+ com.google.mlkit.samples.vision.digitalink.StrokeManager
+ com.google.mlkit.samples.vision.digitalink.StrokeManager$ContentChangedListener
+ com.google.mlkit.samples.vision.digitalink.StrokeManager$DownloadedModelsChangedListener
+ com.google.mlkit.samples.vision.digitalink.StrokeManager$StatusChangedListener
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/google/mlkit/samples/vision/digitalink/ModelManager.java
+ com.google.mlkit.samples.vision.digitalink.ModelManager
+com/google/mlkit/samples/vision/digitalink/DataBindingTriggerClass.java
+ com.google.mlkit.samples.vision.digitalink.DataBindingTriggerClass
+com/google/mlkit/samples/vision/digitalink/StatusTextView.java
+ com.google.mlkit.samples.vision.digitalink.StatusTextView
+com/google/mlkit/samples/vision/digitalink/epoxy/ParticipantModelBuilder.java
+ com.google.mlkit.samples.vision.digitalink.epoxy.ParticipantModelBuilder
+com/google/mlkit/samples/vision/digitalink/epoxy/ParticipantModel_.java
+ com.google.mlkit.samples.vision.digitalink.epoxy.ParticipantModel_
+com/google/mlkit/samples/vision/digitalink/RecognitionTask.java
+ com.google.mlkit.samples.vision.digitalink.RecognitionTask
+ com.google.mlkit.samples.vision.digitalink.RecognitionTask$RecognizedInk
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/google/mlkit/samples/vision/digitalink/BR.java
+ com.google.mlkit.samples.vision.digitalink.BR
+com/google/mlkit/samples/vision/digitalink/BuildConfig.java
+ com.google.mlkit.samples.vision.digitalink.BuildConfig
+com/google/mlkit/samples/vision/digitalink/DrawingView.java
+ com.google.mlkit.samples.vision.digitalink.DrawingView
+com/google/mlkit/samples/vision/digitalink/databinding/ActivityCallBinding.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
+com/google/mlkit/samples/vision/digitalink/databinding/ItemUsersBindingImpl.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ItemUsersBindingImpl
+com/google/mlkit/samples/vision/digitalink/databinding/FragmentDashboardBinding.java
+ com.google.mlkit.samples.vision.digitalink.databinding.FragmentDashboardBinding
+com/google/mlkit/samples/vision/digitalink/databinding/ActivityPreviewBinding.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ActivityPreviewBinding
+com/google/mlkit/samples/vision/digitalink/databinding/ItemUsersBinding.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ItemUsersBinding
+com/google/mlkit/samples/vision/digitalink/databinding/FragmentCallBinding.java
+ com.google.mlkit.samples.vision.digitalink.databinding.FragmentCallBinding
+com/google/mlkit/samples/vision/digitalink/DataBinderMapperImpl.java
+ com.google.mlkit.samples.vision.digitalink.DataBinderMapperImpl
+ com.google.mlkit.samples.vision.digitalink.DataBinderMapperImpl$InnerBrLookup
+ com.google.mlkit.samples.vision.digitalink.DataBinderMapperImpl$InnerLayoutIdLookup
+com/google/mlkit/samples/vision/digitalink/databinding/FragmentCallBindingImpl.java
+ com.google.mlkit.samples.vision.digitalink.databinding.FragmentCallBindingImpl
+com/google/mlkit/samples/vision/digitalink/databinding/ActivityCallBindingImpl.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBindingImpl
+com/google/mlkit/samples/vision/digitalink/DigitalInkMainActivity.java
+ com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity
+ com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity$1
+ com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity$ModelLanguageContainer
+com/google/mlkit/samples/vision/digitalink/databinding/FragmentDashboardBindingImpl.java
+ com.google.mlkit.samples.vision.digitalink.databinding.FragmentDashboardBindingImpl
+com/google/mlkit/samples/vision/digitalink/databinding/ActivityPreviewBindingImpl.java
+ com.google.mlkit.samples.vision.digitalink.databinding.ActivityPreviewBindingImpl

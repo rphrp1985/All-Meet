@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_users.xml",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\item_users.xml"
+    },
+    {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_call.xml",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\fragment_call.xml"
+    },
+    {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_preview.xml",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\activity_preview.xml"
+    },
+    {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_call.xml",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\activity_call.xml"
+    }
+]

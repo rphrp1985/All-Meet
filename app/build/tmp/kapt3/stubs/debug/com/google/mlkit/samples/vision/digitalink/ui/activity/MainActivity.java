@@ -6,9 +6,9 @@ import java.lang.System;
 public final class MainActivity extends androidx.appcompat.app.AppCompatActivity {
     private final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment dashboardFragment = null;
     private final com.prianshuprasad.webrtc.ui.viewmodel.MainActivityViewModel mainActivityViewModel = null;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private final java.lang.String userId = "sendbird_desk_agent_id_fd4986a8-19a8-4958-bd9f-c136a60e73e0";
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private final java.lang.String token = "30692c5d372e1ae2f7e3bb625276929a44427ff4";
     private java.util.HashMap _$_findViewCache;
     
@@ -16,25 +16,25 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String getUserId() {
         return null;
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.lang.String getToken() {
         return null;
     }
     
-    @java.lang.Override()
-    protected void onCreate(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    protected void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
     
     public final void createAndEnterRoom() {
     }
     
-    public final void fetchRoomById(@org.jetbrains.annotations.NotNull()
+    public final void fetchRoomById(@org.jetbrains.annotations.NotNull
     java.lang.String roomId) {
     }
     
@@ -44,7 +44,7 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     public final void observe() {
     }
     
-    public final void openPreview(@org.jetbrains.annotations.NotNull()
+    public final void openPreview(@org.jetbrains.annotations.NotNull
     java.lang.String roomId) {
     }
 }

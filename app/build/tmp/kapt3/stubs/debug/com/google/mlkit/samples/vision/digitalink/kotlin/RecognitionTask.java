@@ -12,12 +12,12 @@ public final class RecognitionTask {
     private com.google.mlkit.samples.vision.digitalink.kotlin.RecognitionTask.RecognizedInk currentResult;
     private final java.util.concurrent.atomic.AtomicBoolean cancelled = null;
     private final java.util.concurrent.atomic.AtomicBoolean done = null;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public static final com.google.mlkit.samples.vision.digitalink.kotlin.RecognitionTask.Companion Companion = null;
     private static final java.lang.String TAG = "MLKD.RecognitionTask";
     
-    public RecognitionTask(@org.jetbrains.annotations.Nullable()
-    com.google.mlkit.vision.digitalink.DigitalInkRecognizer recognizer, @org.jetbrains.annotations.NotNull()
+    public RecognitionTask(@org.jetbrains.annotations.Nullable
+    com.google.mlkit.vision.digitalink.DigitalInkRecognizer recognizer, @org.jetbrains.annotations.NotNull
     com.google.mlkit.vision.digitalink.Ink ink) {
         super();
     }
@@ -29,12 +29,12 @@ public final class RecognitionTask {
         return false;
     }
     
-    @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
     public final com.google.mlkit.samples.vision.digitalink.kotlin.RecognitionTask.RecognizedInk result() {
         return null;
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final com.google.android.gms.tasks.Task<java.lang.String> run() {
         return null;
     }
@@ -44,23 +44,23 @@ public final class RecognitionTask {
      */
     @kotlin.Metadata(mv = {1, 7, 1}, k = 1, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\u0018\u00002\u00020\u0001B\u0019\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0002\u0010\u0006R\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n\u00a8\u0006\u000b"}, d2 = {"Lcom/google/mlkit/samples/vision/digitalink/kotlin/RecognitionTask$RecognizedInk;", "", "ink", "Lcom/google/mlkit/vision/digitalink/Ink;", "text", "", "(Lcom/google/mlkit/vision/digitalink/Ink;Ljava/lang/String;)V", "getInk", "()Lcom/google/mlkit/vision/digitalink/Ink;", "getText", "()Ljava/lang/String;", "vision-digital-ink_debug"})
     public static final class RecognizedInk {
-        @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
         private final com.google.mlkit.vision.digitalink.Ink ink = null;
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         private final java.lang.String text = null;
         
-        public RecognizedInk(@org.jetbrains.annotations.NotNull()
-        com.google.mlkit.vision.digitalink.Ink ink, @org.jetbrains.annotations.Nullable()
+        public RecognizedInk(@org.jetbrains.annotations.NotNull
+        com.google.mlkit.vision.digitalink.Ink ink, @org.jetbrains.annotations.Nullable
         java.lang.String text) {
             super();
         }
         
-        @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
         public final com.google.mlkit.vision.digitalink.Ink getInk() {
             return null;
         }
         
-        @org.jetbrains.annotations.Nullable()
+        @org.jetbrains.annotations.Nullable
         public final java.lang.String getText() {
             return null;
         }

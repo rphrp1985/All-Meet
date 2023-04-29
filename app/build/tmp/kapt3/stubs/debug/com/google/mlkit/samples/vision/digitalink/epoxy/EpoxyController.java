@@ -6,7 +6,7 @@ import java.lang.System;
 public final class EpoxyController extends com.airbnb.epoxy.EpoxyController {
     private final int SHeight = 0;
     private final int SWidth = 0;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     private java.util.ArrayList<com.sendbird.calls.Participant> items;
     
     public EpoxyController(int SHeight, int SWidth) {
@@ -21,25 +21,25 @@ public final class EpoxyController extends com.airbnb.epoxy.EpoxyController {
         return 0;
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final java.util.ArrayList<com.sendbird.calls.Participant> getItems() {
         return null;
     }
     
-    public final void setItems(@org.jetbrains.annotations.NotNull()
+    public final void setItems(@org.jetbrains.annotations.NotNull
     java.util.ArrayList<com.sendbird.calls.Participant> p0) {
     }
     
-    public final void update(@org.jetbrains.annotations.NotNull()
+    public final void update(@org.jetbrains.annotations.NotNull
     java.util.ArrayList<com.sendbird.calls.Participant> x) {
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     protected void buildModels() {
     }
     
-    @org.jetbrains.annotations.NotNull()
-    @java.lang.Override()
+    @org.jetbrains.annotations.NotNull
+    @java.lang.Override
     public androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup getSpanSizeLookup() {
         return null;
     }

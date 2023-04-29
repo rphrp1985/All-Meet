@@ -13,22 +13,22 @@ public final class StatusTextView extends androidx.appcompat.widget.AppCompatTex
     private com.google.mlkit.samples.vision.digitalink.kotlin.StrokeManager strokeManager;
     private java.util.HashMap _$_findViewCache;
     
-    public StatusTextView(@org.jetbrains.annotations.NotNull()
+    public StatusTextView(@org.jetbrains.annotations.NotNull
     android.content.Context context) {
         super(null);
     }
     
-    public StatusTextView(@org.jetbrains.annotations.Nullable()
-    android.content.Context context, @org.jetbrains.annotations.Nullable()
+    public StatusTextView(@org.jetbrains.annotations.Nullable
+    android.content.Context context, @org.jetbrains.annotations.Nullable
     android.util.AttributeSet attributeSet) {
         super(null);
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     public void onStatusChanged() {
     }
     
-    public final void setStrokeManager(@org.jetbrains.annotations.Nullable()
+    public final void setStrokeManager(@org.jetbrains.annotations.Nullable
     com.google.mlkit.samples.vision.digitalink.kotlin.StrokeManager strokeManager) {
     }
 }

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
 MERGED from [androidx.databinding:databinding-adapters:4.2.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\930906dc94670d57ff40cd70c7d3eb37\databinding-adapters-4.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:databinding-runtime:7.1.2] C:\Users\user\.gradle\caches\transforms-2\files-2.1\3b2d84cdbfdaac3265960191714cf6c3\databinding-runtime-7.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [com.airbnb.android:epoxy:5.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\ff2b831f8d3bedfe3395bcc3076b5809\jetified-epoxy-5.0.0\AndroidManifest.xml:2:1-11:12
@@ -81,9 +81,9 @@ MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\user\.g
 MERGED from [org.conscrypt:conscrypt-android:2.2.1] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7a0ef1fc413e44a3ae691a8c5da1ccc9\jetified-conscrypt-android-2.2.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.sendbird.sdk:sendbird-webrtc:1.0.4390] C:\Users\user\.gradle\caches\transforms-2\files-2.1\d075819a32d9ffc27ad53b9b0569d527\jetified-sendbird-webrtc-1.0.4390\AndroidManifest.xml:11:1-14:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] C:\Users\user\.gradle\caches\transforms-2\files-2.1\74ca59d1d3f492ea5e241938371b8c45\jetified-relinker-1.4.3\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
-INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-93:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
+INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml:1:1-97:12
 	package
 		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:2:5-57
 		INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml
@@ -134,8 +134,18 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:9:3-79
 	android:name
 		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:9:20-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:10:5-70
+MERGED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:19:5-71
+MERGED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:19:5-71
+	android:name
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:10:22-68
+uses-permission#android.permission.STORAGE
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:12:5-65
+	android:name
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:12:22-63
 application
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:11:3-91:17
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:15:5-95:17
 MERGED from [com.airbnb.android:epoxy:5.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\ff2b831f8d3bedfe3395bcc3076b5809\jetified-epoxy-5.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.airbnb.android:epoxy:5.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\ff2b831f8d3bedfe3395bcc3076b5809\jetified-epoxy-5.0.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.camera:camera-extensions:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\f881c216a97ae82e7c12d0e6ab04c615\jetified-camera-extensions-1.1.0\AndroidManifest.xml:30:5-34:19
@@ -183,57 +193,57 @@ MERGED from [org.conscrypt:conscrypt-android:2.2.1] C:\Users\user\.gradle\caches
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\b97d4dcabab59207516cc4b327f835ca\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:12:42-74
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:16:42-74
 	android:icon
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:12:7-41
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:16:7-41
 	android:theme
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:13:7-65
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:17:7-65
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:11:16-68
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:15:18-70
 activity#com.google.mlkit.samples.vision.digitalink.kotlin.DigitalInkMainActivity
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:15:5-20:12
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:19:5-24:12
 	android:screenOrientation
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:19:9-45
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:23:9-45
 	android:label
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:17:9-52
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:21:9-52
 	android:exported
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:18:9-32
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:22:9-32
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:16:9-96
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:20:9-96
 activity#com.google.mlkit.samples.vision.digitalink.ui.activity.PreviewActivity
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:26:5-32:16
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:30:5-36:16
 	android:exported
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:28:9-33
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:32:9-33
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:27:9-52
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:31:9-52
 meta-data#android.app.lib_name
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:29:7-31:30
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:33:7-35:30
 	android:value
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:31:11-27
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:35:11-27
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:30:11-46
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:34:11-46
 activity#com.google.mlkit.samples.vision.digitalink.ui.activity.CallActivity
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:33:5-39:16
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:37:5-43:16
 	android:exported
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:35:9-33
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:39:9-33
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:34:9-49
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:38:9-49
 activity#com.google.mlkit.samples.vision.digitalink.ui.activity.MainActivity
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:40:5-54:16
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:44:5-58:16
 	android:exported
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:42:9-32
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:46:9-32
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:41:9-49
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:45:9-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:44:7-48:23
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:48:7-52:23
 action#android.intent.action.MAIN
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:45:9-61
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:49:9-61
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:45:17-58
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:49:17-58
 category#android.intent.category.LAUNCHER
-ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:47:9-69
+ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:51:9-69
 	android:name
-		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:47:19-66
+		ADDED from D:\android\digitalink\app\src\main\AndroidManifest.xml:51:19-66
 uses-sdk
 INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\android\digitalink\app\src\main\AndroidManifest.xml
@@ -538,10 +548,6 @@ uses-permission#android.permission.CAMERA
 ADDED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:16:5-65
 	android:name
 		ADDED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:16:22-62
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:19:5-71
-	android:name
-		ADDED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:19:22-68
 uses-permission#android.permission.BLUETOOTH
 ADDED from [com.sendbird.sdk:sendbird-calls:1.8.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7eeca1d931c19e729683e58337aca671\jetified-sendbird-calls-1.8.0\AndroidManifest.xml:20:5-68
 	android:name

@@ -19,7 +19,7 @@ public final class DrawingView extends android.view.View implements com.google.m
     private android.graphics.Canvas drawCanvas;
     private android.graphics.Bitmap canvasBitmap;
     private com.google.mlkit.samples.vision.digitalink.kotlin.StrokeManager strokeManager;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public static final com.google.mlkit.samples.vision.digitalink.kotlin.DrawingView.Companion Companion = null;
     private static final java.lang.String TAG = "MLKD.DrawingView";
     private static final int STROKE_WIDTH_DP = 3;
@@ -29,24 +29,24 @@ public final class DrawingView extends android.view.View implements com.google.m
     private static final int MAX_BB_HEIGHT = 256;
     private java.util.HashMap _$_findViewCache;
     
-    @kotlin.jvm.JvmOverloads()
-    public DrawingView(@org.jetbrains.annotations.Nullable()
+    @kotlin.jvm.JvmOverloads
+    public DrawingView(@org.jetbrains.annotations.Nullable
     android.content.Context context) {
         super(null);
     }
     
-    @kotlin.jvm.JvmOverloads()
-    public DrawingView(@org.jetbrains.annotations.Nullable()
-    android.content.Context context, @org.jetbrains.annotations.Nullable()
+    @kotlin.jvm.JvmOverloads
+    public DrawingView(@org.jetbrains.annotations.Nullable
+    android.content.Context context, @org.jetbrains.annotations.Nullable
     android.util.AttributeSet attributeSet) {
         super(null);
     }
     
-    public final void setStrokeManager(@org.jetbrains.annotations.NotNull()
+    public final void setStrokeManager(@org.jetbrains.annotations.NotNull
     com.google.mlkit.samples.vision.digitalink.kotlin.StrokeManager strokeManager) {
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
     }
     
@@ -65,18 +65,18 @@ public final class DrawingView extends android.view.View implements com.google.m
     public final void clear() {
     }
     
-    @java.lang.Override()
-    protected void onDraw(@org.jetbrains.annotations.NotNull()
+    @java.lang.Override
+    protected void onDraw(@org.jetbrains.annotations.NotNull
     android.graphics.Canvas canvas) {
     }
     
-    @java.lang.Override()
-    public boolean onTouchEvent(@org.jetbrains.annotations.NotNull()
+    @java.lang.Override
+    public boolean onTouchEvent(@org.jetbrains.annotations.NotNull
     android.view.MotionEvent event) {
         return false;
     }
     
-    @java.lang.Override()
+    @java.lang.Override
     public void onContentChanged() {
     }
     

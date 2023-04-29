@@ -2,23 +2,29 @@ package com.google.mlkit.samples.vision.digitalink.ui.activity
 
 
 
+//import androidx.databinding.DataBindingUtil
+//import com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
+//import com.prianshuprasad.webrtc.R
+//import com.prianshuprasad.webrtc.databinding.ActivityCallBinding
+
 import android.content.res.Resources
+import android.media.MediaRecorder
 import android.os.Bundle
+import android.os.Environment
+import android.os.Handler
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-//import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.mlkit.samples.vision.digitalink.R
 import com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
-//import com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
 import com.google.mlkit.samples.vision.digitalink.epoxy.EpoxyController
 import com.prianshuprasad.webrtc.GroupCallViewModel
-//import com.prianshuprasad.webrtc.R
-//import com.prianshuprasad.webrtc.databinding.ActivityCallBinding
 import com.sendbird.calls.Participant
 import com.sendbird.calls.SendBirdCall
+import java.io.IOException
 
 
 class CallActivity : AppCompatActivity() {
@@ -37,6 +43,7 @@ class CallActivity : AppCompatActivity() {
        groupCallViewModel= GroupCallViewModel(roomId)
 
         initView(roomId)
+        startrecording()
 
     }
 
@@ -190,6 +197,40 @@ class CallActivity : AppCompatActivity() {
             .create()
             .show()
     }
+
+    fun startrecording(){
+        // with the path of the recorded audio file.
+        // with the path of the recorded audio file.
+       var mFileName = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()
+        mFileName += "/AudioRecording.ogg"
+
+
+       val mRecorder = MediaRecorder()
+
+        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+
+
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG)
+
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS)
+
+
+        mRecorder.setOutputFile(mFileName)
+        try {
+
+            mRecorder.prepare()
+        } catch (e: IOException) {
+            Log.e("TAG", "prepare() failed")
+        }
+
+        mRecorder.start()
+
+        Handler().postDelayed({
+            mRecorder.stop()
+        },5000)
+    }
+
+
 
 
 

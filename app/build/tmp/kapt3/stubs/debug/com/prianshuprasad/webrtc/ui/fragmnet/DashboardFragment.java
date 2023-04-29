@@ -14,7 +14,7 @@ public final class DashboardFragment extends androidx.fragment.app.Fragment {
     private android.widget.Button createRoom;
     private android.widget.Button continue_button;
     private com.google.android.material.textfield.TextInputEditText textBox;
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public static final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment.Companion Companion = null;
     private java.util.HashMap _$_findViewCache;
     
@@ -22,16 +22,16 @@ public final class DashboardFragment extends androidx.fragment.app.Fragment {
         super();
     }
     
-    @java.lang.Override()
-    public void onCreate(@org.jetbrains.annotations.Nullable()
+    @java.lang.Override
+    public void onCreate(@org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
     }
     
-    @org.jetbrains.annotations.Nullable()
-    @java.lang.Override()
-    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull()
-    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable()
-    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable()
+    @org.jetbrains.annotations.Nullable
+    @java.lang.Override
+    public android.view.View onCreateView(@org.jetbrains.annotations.NotNull
+    android.view.LayoutInflater inflater, @org.jetbrains.annotations.Nullable
+    android.view.ViewGroup container, @org.jetbrains.annotations.Nullable
     android.os.Bundle savedInstanceState) {
         return null;
     }
@@ -44,10 +44,10 @@ public final class DashboardFragment extends androidx.fragment.app.Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment DashboardFragment.
      */
-    @org.jetbrains.annotations.NotNull()
-    @kotlin.jvm.JvmStatic()
-    public static final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment newInstance(@org.jetbrains.annotations.NotNull()
-    java.lang.String param1, @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
+    @kotlin.jvm.JvmStatic
+    public static final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment newInstance(@org.jetbrains.annotations.NotNull
+    java.lang.String param1, @org.jetbrains.annotations.NotNull
     java.lang.String param2) {
         return null;
     }
@@ -67,10 +67,10 @@ public final class DashboardFragment extends androidx.fragment.app.Fragment {
          * @param param2 Parameter 2.
          * @return A new instance of fragment DashboardFragment.
          */
-        @org.jetbrains.annotations.NotNull()
-        @kotlin.jvm.JvmStatic()
-        public final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment newInstance(@org.jetbrains.annotations.NotNull()
-        java.lang.String param1, @org.jetbrains.annotations.NotNull()
+        @org.jetbrains.annotations.NotNull
+        @kotlin.jvm.JvmStatic
+        public final com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment newInstance(@org.jetbrains.annotations.NotNull
+        java.lang.String param1, @org.jetbrains.annotations.NotNull
         java.lang.String param2) {
             return null;
         }

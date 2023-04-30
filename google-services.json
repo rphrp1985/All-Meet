@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1043618967705",
+    "project_id": "all-meet-ef99c",
+    "storage_bucket": "all-meet-ef99c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043618967705:android:e55e592cb6909a55d8c808",
+        "android_client_info": {
+          "package_name": "com.google.mlkit.samples.vision.digitalink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043618967705-vjfu2etnbeib8sm895l35i1sing1c7me.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.mlkit.samples.vision.digitalink",
+            "certificate_hash": "0e0ed1e6aeee4566d7f6b38ff942cf2ea4ab3886"
+          }
+        },
+        {
+          "client_id": "1043618967705-1qinmjep6g8h14s4n5h23aes6trrgn8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFvpdztwHm1GZtgy0dxVF9O_Ux4Tzdp20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043618967705-1qinmjep6g8h14s4n5h23aes6trrgn8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

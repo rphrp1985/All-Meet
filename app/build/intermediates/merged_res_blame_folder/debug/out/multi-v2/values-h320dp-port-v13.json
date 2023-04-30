@@ -4,7 +4,7 @@
             "outputFile": "D:\\android\\digitalink\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\635968d7b00a9bd4d26f249ce8d714b7\\material-1.6.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-3\\384bfbe205866fb9699bfd8b0154d1f8\\transformed\\material-1.6.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

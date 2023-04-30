@@ -51,13 +51,17 @@ public abstract class ActivityCallBinding extends ViewDataBinding {
   @NonNull
   public final TextView groupCallTextViewRoomId;
 
+  @NonNull
+  public final ImageView handwritting;
+
   protected ActivityCallBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ConstraintLayout groupCallConstraintLayoutFooter,
       ConstraintLayout groupCallConstraintLayoutHeader, ImageView groupCallImageViewAudioOnOff,
       ImageView groupCallImageViewCameraFlip, ImageView groupCallImageViewExit,
       ImageView groupCallImageViewSpeaker, ImageView groupCallImageViewVideoOnOff,
       LinearLayout groupCallLinearLayoutParticipants, LinearLayout groupCallLinearLayoutRoomIdInfo,
-      EpoxyRecyclerView groupCallRecyclerViewParticipants, TextView groupCallTextViewRoomId) {
+      EpoxyRecyclerView groupCallRecyclerViewParticipants, TextView groupCallTextViewRoomId,
+      ImageView handwritting) {
     super(_bindingComponent, _root, _localFieldCount);
     this.groupCallConstraintLayoutFooter = groupCallConstraintLayoutFooter;
     this.groupCallConstraintLayoutHeader = groupCallConstraintLayoutHeader;
@@ -70,6 +74,7 @@ public abstract class ActivityCallBinding extends ViewDataBinding {
     this.groupCallLinearLayoutRoomIdInfo = groupCallLinearLayoutRoomIdInfo;
     this.groupCallRecyclerViewParticipants = groupCallRecyclerViewParticipants;
     this.groupCallTextViewRoomId = groupCallTextViewRoomId;
+    this.handwritting = handwritting;
   }
 
   @NonNull

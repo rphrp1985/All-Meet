@@ -9,8 +9,10 @@ package com.google.mlkit.samples.vision.digitalink.ui.activity
 
 //import kotlinx.coroutines.DefaultExecutor.thread
 
+import android.content.Intent
 import android.content.res.Resources
 import android.media.MediaRecorder
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
@@ -27,9 +29,11 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+//import com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity
 import com.google.mlkit.samples.vision.digitalink.R
 import com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
 import com.google.mlkit.samples.vision.digitalink.epoxy.EpoxyController
+import com.google.mlkit.samples.vision.digitalink.kotlin.DigitalInkMainActivity
 import com.prianshuprasad.webrtc.GroupCallViewModel
 //import com.sendbird.android.shadow.okhttp3.MultipartBody
 import com.sendbird.calls.Participant
@@ -50,6 +54,7 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
+import java.lang.Thread.sleep
 import kotlin.concurrent.thread
 
 
@@ -59,6 +64,7 @@ class CallActivity : AppCompatActivity() {
     lateinit var groupCallViewModel: GroupCallViewModel
     var roomId: String = ""
     var storage: FirebaseStorage? = null
+
     var storageReference: StorageReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +80,8 @@ class CallActivity : AppCompatActivity() {
         groupCallViewModel = GroupCallViewModel(roomId)
 
         initView(roomId)
-        startrecording()
+//        startrecording()
+        sendText()
 
     }
 
@@ -129,6 +136,10 @@ class CallActivity : AppCompatActivity() {
         binding.groupCallImageViewExit.setOnClickListener {
             groupCallViewModel.exit()
         }
+        binding.handwritting.setOnClickListener {
+            val intent= Intent(this, DigitalInkMainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initRecyclerView() {
@@ -146,7 +157,7 @@ class CallActivity : AppCompatActivity() {
             val x = ArrayList<Participant>()
 
             for (i in it) {
-                Toast.makeText(this@CallActivity, "${i.toString()}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@CallActivity, "${i.toString()}", Toast.LENGTH_SHORT).show()
                 x.add(i);
             }
             controller.update(x)
@@ -237,7 +248,7 @@ class CallActivity : AppCompatActivity() {
             var mFileName =
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                     .toString()
-            mFileName += "/AudioRecording.ogg"
+            mFileName += "/AudioRecording${System.currentTimeMillis()}.ogg"
 
 
             val mRecorder = MediaRecorder()
@@ -278,34 +289,35 @@ class CallActivity : AppCompatActivity() {
 
 
 
-    private fun postDataUsingVolley(url:String) {
+    private fun postDataUsingVolley(link:String) {
 
-        val url = "http://172.17.0.194:5000"
+        val url = URLOBJ.link+"/speech"
 
         val queue = Volley.newRequestQueue(this@CallActivity)
 
         val request: StringRequest = object : StringRequest(
             Request.Method.POST, url,
             Response.Listener<String?> { response ->
-                Toast.makeText(
-                    this@CallActivity,
-                    "resp = $response",
-                    Toast.LENGTH_SHORT
-                ).show()
+//                Toast.makeText(
+//                    this@CallActivity,
+//                    "resp = $response",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+                CURRENTTEXT.text+= response.trim()
 
             }, Response.ErrorListener { error -> // method to handle errors.
-                Toast.makeText(
-                    this@CallActivity,
-                    "Fail to get response = $error",
-                    Toast.LENGTH_SHORT
-                ).show()
+//                Toast.makeText(
+//                    this@CallActivity,
+//                    "Fail to get response = $error",
+//                    Toast.LENGTH_SHORT
+//                ).show()
                 Log.e("VOLLEY_ERROR", "$error")
             }) {
 
 
             override fun getParams(): MutableMap<String, String>? {
                 val x = mutableMapOf<String, String>()
-                x["file"] = url
+                x["file"] = link
                 return x;
             }
 
@@ -319,24 +331,27 @@ class CallActivity : AppCompatActivity() {
     private fun uploadtoFB(filePath: String) {
 
         startrecording()
+
+//        Toast.makeText(this,"inside uploadtofb",Toast.LENGTH_SHORT).show()
         if (filePath != null) {
             val ref = storageReference
                 ?.child(
-                    "audio/${groupCallViewModel.localParticipant.value?.participantId}"
+                    "audio/${groupCallViewModel.localParticipant.value?.participantId}${System.currentTimeMillis()}.ogg"
 
                 )
 
-            Log.d("Camera ", " image uploaded to $ref")
+            val file= Uri.fromFile(File(filePath));
+            Log.d("FIREBASE ", " image uploaded to $ref")
             // adding listeners on upload
             // or failure of image
-            ref?.putFile(filePath.toUri()!!)
+            ref?.putFile(file!!)
                 ?.addOnSuccessListener {
                     // Dismiss dialog
 
 
                 }
                 ?.addOnFailureListener { e -> // Error, Image not uploaded
-                   Log.d("FIREBASE","failed")
+                    Log.d("FIREBASE","failed")
                 }
                 ?.addOnProgressListener { taskSnapshot ->
 
@@ -345,8 +360,9 @@ class CallActivity : AppCompatActivity() {
                 }?.addOnCompleteListener {
 
                     ref.downloadUrl.addOnSuccessListener {
-                        Log.d("Camera ", " image uploaded to $it")
+                        Log.d("Firebase", " uploaded to $it")
                         postDataUsingVolley(it.toString())
+                        File(filePath).delete()
 
                         // Got the download URL for 'users/me/profile.png'
                     }.addOnFailureListener {
@@ -361,21 +377,88 @@ class CallActivity : AppCompatActivity() {
     }
 
 
+
+
+    fun sendText(){
+        var lastlength=0
+
+        thread {
+
+            while (true) {
+
+                val url = URLOBJ.link + "/talks"
+
+                val queue = Volley.newRequestQueue(this@CallActivity)
+
+                val request: StringRequest = object : StringRequest(
+                    Request.Method.POST, url,
+                    Response.Listener<String?> { response ->
+
+
+                        var arr = response.split('~')
+
+                        while(lastlength<arr.size){
+                            var temp = arr[lastlength].trim()
+
+                            runOnUiThread {
+                                Toast.makeText(this@CallActivity,temp,Toast.LENGTH_SHORT).show()
+                            }
+
+                            lastlength++;
+                        }
+
+
+                    }, Response.ErrorListener { error -> // method to handle errors.
+//                        Toast.makeText(
+//                            this@CallActivity,
+//                            "Fail to get response = $error",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+                        Log.e("VOLLEY_ERROR", "$error")
+                    }) {
+
+
+                    override fun getParams(): MutableMap<String, String>? {
+                        val x = mutableMapOf<String, String>()
+                        x["room"] = roomId
+                        x["text"] = CURRENTTEXT.text
+                        CURRENTTEXT.text = ""
+                        x["user_name"] =
+                            groupCallViewModel.localParticipant.value?.participantId.toString()
+
+                        return x;
+                    }
+
+
+                }
+
+                queue.add(request)
+
+                sleep(2000)
+
+
+            }
+
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+object  CURRENTTEXT{
+    var text=""
 }
 
 
-
-
-
-
-
-
-
-internal interface Service {
-    @Multipart
-    @POST("/")
-    fun postaudio(
-        @Part image: MultipartBody.Part?,
-        @Part("name") name: RequestBody?,
-    ): retrofit2.Call<ResponseBody>
-}

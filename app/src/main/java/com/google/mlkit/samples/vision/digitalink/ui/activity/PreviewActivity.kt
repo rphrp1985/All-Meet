@@ -99,7 +99,6 @@ class PreviewActivity : AppCompatActivity() {
             intent.getStringExtra("room") ?: throw IllegalStateException("Room ID must not be null")
         val intent = Intent(this, CallActivity::class.java).apply {
             putExtra("room", roomId)
-
         }
 
         startActivity(intent)

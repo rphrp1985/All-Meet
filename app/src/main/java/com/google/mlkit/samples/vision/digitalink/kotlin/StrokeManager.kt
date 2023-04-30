@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.SuccessContinuation
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.mlkit.samples.vision.digitalink.kotlin.RecognitionTask.RecognizedInk
+import com.google.mlkit.samples.vision.digitalink.ui.activity.CURRENTTEXT
 import com.google.mlkit.vision.digitalink.Ink
 import com.google.mlkit.vision.digitalink.Ink.Stroke
 import java.lang.Integer.max
@@ -93,6 +94,8 @@ class StrokeManager(val textToSpeech: TextToSpeech?) {
     recognitionTask!!.result()?.let {
 //      content.add(it)
       textToSpeech!!.speak(it.text,TextToSpeech.QUEUE_FLUSH,null);
+      CURRENTTEXT.text += it.text
+
 
       status = "Successful recognition: " + it.text
 //      if (clearCurrentInkAfterRecognition && y>1000) {

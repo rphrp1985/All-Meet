@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
     private val mainActivityViewModel =MainActivityViewModel()
 
 
-//    val userId= "jj"
-//    val token = "536c698a1390e4d39970875d834f2faf1d3a811a";
+    val userId= "jj"
+    val token = "536c698a1390e4d39970875d834f2faf1d3a811a";
 
-    val userId= "sendbird_desk_agent_id_fd4986a8-19a8-4958-bd9f-c136a60e73e0";
-    val token ="30692c5d372e1ae2f7e3bb625276929a44427ff4"
+//    val userId= "sendbird_desk_agent_id_fd4986a8-19a8-4958-bd9f-c136a60e73e0";
+//    val token ="30692c5d372e1ae2f7e3bb625276929a44427ff4"
 
     var storage: FirebaseStorage? = null
     var storageReference: StorageReference? = null
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         openDashBoard()
 
-        startrecording()
+//        startrecording()
 
     }
 
@@ -106,161 +106,146 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun startrecording() {
-
-        thread {
-            // with the path of the recorded audio file.
-            // with the path of the recorded audio file.
-            var mFileName =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                    .toString()
-            mFileName += "/AudioRecording${System.currentTimeMillis()}.ogg"
-
-
-            val mRecorder = MediaRecorder()
-
-            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
-
-
-            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG)
-
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS)
-
-
-            mRecorder.setOutputFile(mFileName)
-            try {
-
-                mRecorder.prepare()
-            } catch (e: IOException) {
-                Log.e("TAG", "prepare() failed")
-            }
-
-            mRecorder.start()
-            runOnUiThread {
-                Handler().postDelayed({
-                    mRecorder.stop()
-                    mRecorder.release()
-                    Handler().postDelayed({
-                        uploadtoFB(mFileName)
-                    }, 1000)
-
-//                        startrecording()
-                }, 5000)
-            }
-
-
-        }
-
-    }
-
-
-
-    private fun postDataUsingVolley(link:String) {
-
-        val url = "http://172.17.0.194:5000"
-
-        val queue = Volley.newRequestQueue(this@MainActivity)
-
-        val request: StringRequest = object : StringRequest(
-            Request.Method.POST, url,
-            Response.Listener<String?> { response ->
-                Toast.makeText(
-                    this@MainActivity,
-                    "resp = $response",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            }, Response.ErrorListener { error -> // method to handle errors.
-                Toast.makeText(
-                    this@MainActivity,
-                    "Fail to get response = $error",
-                    Toast.LENGTH_SHORT
-                ).show()
-                Log.e("VOLLEY_ERROR", "$error")
-            }) {
-
-
-            override fun getParams(): MutableMap<String, String>? {
-                val x = mutableMapOf<String, String>()
-                x["file"] = link
-                return x;
-            }
-
-
-        }
-
-        queue.add(request)
-    }
-
-
-    private fun uploadtoFB(filePath: String) {
-
-        startrecording()
-
-        Toast.makeText(this,"inside uploadtofb",Toast.LENGTH_SHORT).show()
-        if (filePath != null) {
-            val ref = storageReference
-                ?.child(
-                    "audio/ID${System.currentTimeMillis()}.ogg"
-
-                )
-
-            val file= Uri.fromFile(File(filePath));
-            Log.d("FIREBASE ", " image uploaded to $ref")
-            // adding listeners on upload
-            // or failure of image
-            ref?.putFile(file!!)
-                ?.addOnSuccessListener {
-                    // Dismiss dialog
-
-
-                }
-                ?.addOnFailureListener { e -> // Error, Image not uploaded
-                    Log.d("FIREBASE","failed")
-                }
-                ?.addOnProgressListener { taskSnapshot ->
-
-                    // Progress Listener for loading
-                    // percentage on the dialog box
-                }?.addOnCompleteListener {
-
-                    ref.downloadUrl.addOnSuccessListener {
-                        Log.d("Firebase", " uploaded to $it")
-                        postDataUsingVolley(it.toString())
-                        File(filePath).delete()
-
-                        // Got the download URL for 'users/me/profile.png'
-                    }.addOnFailureListener {
-
-                        // Handle any errors
-                    }
-
-
-                }
-        }
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    fun startrecording() {
+//
+//        thread {
+//            // with the path of the recorded audio file.
+//            // with the path of the recorded audio file.
+//            var mFileName =
+//                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//                    .toString()
+//            mFileName += "/AudioRecording${System.currentTimeMillis()}.ogg"
+//
+//
+//            val mRecorder = MediaRecorder()
+//
+//            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+//
+//
+//            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG)
+//
+//            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS)
+//
+//
+//            mRecorder.setOutputFile(mFileName)
+//            try {
+//
+//                mRecorder.prepare()
+//            } catch (e: IOException) {
+//                Log.e("TAG", "prepare() failed")
+//            }
+//
+//            mRecorder.start()
+//            runOnUiThread {
+//                Handler().postDelayed({
+//                    mRecorder.stop()
+//                    mRecorder.release()
+//                    Handler().postDelayed({
+//                        uploadtoFB(mFileName)
+//                    }, 1000)
+//
+////                        startrecording()
+//                }, 5000)
+//            }
+//
+//
+//        }
+//
+//    }
+//
+//
+//
+//    private fun postDataUsingVolley(link:String) {
+//
+//        val url = "http://172.17.0.194:5000"
+//
+//        val queue = Volley.newRequestQueue(this@MainActivity)
+//
+//        val request: StringRequest = object : StringRequest(
+//            Request.Method.POST, url,
+//            Response.Listener<String?> { response ->
+//                Toast.makeText(
+//                    this@MainActivity,
+//                    "resp = $response",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//
+//            }, Response.ErrorListener { error -> // method to handle errors.
+//                Toast.makeText(
+//                    this@MainActivity,
+//                    "Fail to get response = $error",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//                Log.e("VOLLEY_ERROR", "$error")
+//            }) {
+//
+//
+//            override fun getParams(): MutableMap<String, String>? {
+//                val x = mutableMapOf<String, String>()
+//                x["file"] = link
+//                return x;
+//            }
+//
+//
+//        }
+//
+//        queue.add(request)
+//    }
+//
+//
+//    private fun uploadtoFB(filePath: String) {
+//
+//        startrecording()
+//
+//        Toast.makeText(this,"inside uploadtofb",Toast.LENGTH_SHORT).show()
+//        if (filePath != null) {
+//            val ref = storageReference
+//                ?.child(
+//                    "audio/ID${System.currentTimeMillis()}.ogg"
+//
+//                )
+//
+//            val file= Uri.fromFile(File(filePath));
+//            Log.d("FIREBASE ", " image uploaded to $ref")
+//            // adding listeners on upload
+//            // or failure of image
+//            ref?.putFile(file!!)
+//                ?.addOnSuccessListener {
+//                    // Dismiss dialog
+//
+//
+//                }
+//                ?.addOnFailureListener { e -> // Error, Image not uploaded
+//                    Log.d("FIREBASE","failed")
+//                }
+//                ?.addOnProgressListener { taskSnapshot ->
+//
+//                    // Progress Listener for loading
+//                    // percentage on the dialog box
+//                }?.addOnCompleteListener {
+//
+//                    ref.downloadUrl.addOnSuccessListener {
+//                        Log.d("Firebase", " uploaded to $it")
+//                        postDataUsingVolley(it.toString())
+//                        File(filePath).delete()
+//
+//                        // Got the download URL for 'users/me/profile.png'
+//                    }.addOnFailureListener {
+//
+//                        // Handle any errors
+//                    }
+//
+//
+//                }
+//        }
+//
+//    }
+//
+//
+
+
+}
+
+object  URLOBJ{
+    var link = "http://172.17.0.194:5000"
 }

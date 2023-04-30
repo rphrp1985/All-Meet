@@ -20,12 +20,16 @@
         "source": "D:\\android\\digitalink\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
     },
     {
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "D:\\android\\digitalink\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\res\\merged\\debug\\drawable_baseline_mode_edit_outline_24.xml.flat",
+        "source": "D:\\android\\digitalink\\app\\src\\main\\res\\drawable\\baseline_mode_edit_outline_24.xml"
     },
     {
         "merged": "D:\\android\\digitalink\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",

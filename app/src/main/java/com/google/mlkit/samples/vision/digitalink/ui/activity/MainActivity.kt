@@ -1,27 +1,19 @@
 package com.google.mlkit.samples.vision.digitalink.ui.activity
 
+import android.R
+import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.media.MediaRecorder
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
-import android.os.Handler
-import android.util.Log
+import android.speech.RecognizerIntent
 import android.widget.Toast
-import androidx.core.net.toUri
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.prianshuprasad.webrtc.ui.fragmnet.DashboardFragment
 import com.prianshuprasad.webrtc.ui.viewmodel.MainActivityViewModel
 import com.sendbird.calls.*
-import java.io.File
-import java.io.IOException
-import kotlin.concurrent.thread
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
     private val dashboardFragment= DashboardFragment()
@@ -56,9 +48,32 @@ class MainActivity : AppCompatActivity() {
 
         openDashBoard()
 
+//        promptSpeechInput()
 //        startrecording()
 
     }
+
+//    private fun promptSpeechInput() {
+//        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+//        intent.putExtra(
+//            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+//            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+//        )
+//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+////        intent.putExtra(
+////            RecognizerIntent.EXTRA_PROMPT,
+////            getString()
+////        )
+//        try {
+//            startActivityForResult(intent, 1)
+//        } catch (a: ActivityNotFoundException) {
+////            Toast.makeText(
+////                applicationContext,
+////                getString(R.string.speech_not_supported),
+////                Toast.LENGTH_SHORT
+////            ).show()
+//        }
+//    }
 
     fun createAndEnterRoom(){
         mainActivityViewModel.createAndEnterRoom()

@@ -85,14 +85,22 @@ class Talks(Resource):
     #   text.trim()
       room = request.form.get("room")
       print(room)
-      print(user+": "+text)
-      if len(text) !=0:
-        if room in self.room_dict:
-         self.room_dict[room]+=(str(user+" : "+text+" ~ "))
-        else:
-         self.room_dict[room] = str(user+" : "+text+" ~ ")
-      return self.room_dict[room]
+      # print(user+": "+text)
+      
+      text2= ""
 
+      try:
+         text2 = self.room_dict[room]
+      except:
+         text2 = ""
+
+      if len(str(text))>2:
+         text2+=(str(user+" : "+text+" ~ "))
+
+      print(text2)
+      
+      self.room_dict[room] = text2
+      return text2
 
 
 

@@ -9,6 +9,8 @@ package com.google.mlkit.samples.vision.digitalink.ui.activity
 
 //import kotlinx.coroutines.DefaultExecutor.thread
 
+//import com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity
+//import com.sendbird.android.shadow.okhttp3.MultipartBody
 import android.content.Intent
 import android.content.res.Resources
 import android.media.MediaRecorder
@@ -20,7 +22,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.android.volley.Request
@@ -29,31 +30,14 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-//import com.google.mlkit.samples.vision.digitalink.DigitalInkMainActivity
 import com.google.mlkit.samples.vision.digitalink.R
 import com.google.mlkit.samples.vision.digitalink.databinding.ActivityCallBinding
 import com.google.mlkit.samples.vision.digitalink.epoxy.EpoxyController
 import com.google.mlkit.samples.vision.digitalink.kotlin.DigitalInkMainActivity
 import com.prianshuprasad.webrtc.GroupCallViewModel
-//import com.sendbird.android.shadow.okhttp3.MultipartBody
 import com.sendbird.calls.Participant
 import com.sendbird.calls.SendBirdCall
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
-import org.json.JSONObject
-import retrofit2.Retrofit
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.Part
-import java.io.BufferedInputStream
 import java.io.File
-import java.io.FileInputStream
-import java.io.FileNotFoundException
-import java.io.IOException
 import java.lang.Thread.sleep
 import kotlin.concurrent.thread
 
@@ -80,7 +64,7 @@ class CallActivity : AppCompatActivity() {
         groupCallViewModel = GroupCallViewModel(roomId)
 
         initView(roomId)
-//        startrecording()
+        initiateRec()
         sendText()
 
     }
@@ -240,50 +224,71 @@ class CallActivity : AppCompatActivity() {
             .show()
     }
 
+
+
+
+    fun initiateRec(){
+
+
+
+        startrecording()
+
+    }
+
+
+
     fun startrecording() {
 
-        thread {
-            // with the path of the recorded audio file.
-            // with the path of the recorded audio file.
-            var mFileName =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                    .toString()
-            mFileName += "/AudioRecording${System.currentTimeMillis()}.ogg"
+
+        // with the path of the recorded audio file.
+        var mFileName =
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                .toString()+"/temp"
+
+        val file = File(mFileName)
+
+        if(!file.exists())
+            file.mkdir()
 
 
-            val mRecorder = MediaRecorder()
-
-            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
 
 
-            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG)
+        val mRecorder = MediaRecorder()
 
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS)
+        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC)
 
 
-            mRecorder.setOutputFile(mFileName)
-            try {
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG)
 
-                mRecorder.prepare()
-            } catch (e: IOException) {
-                Log.e("TAG", "prepare() failed")
-            }
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS)
+
+        var location = mFileName
+         location+= "/AudioRecording${System.currentTimeMillis()}.ogg"
+
+            mRecorder.setOutputFile(location)
+//        mRecorder.setMaxDuration(5000)
+
+            mRecorder.prepare()
+
 
             mRecorder.start()
             runOnUiThread {
                 Handler().postDelayed({
+
                     mRecorder.stop()
                     mRecorder.release()
+                    startrecording()
+
+//                    mRecorder.release()
                     Handler().postDelayed({
-                        uploadtoFB(mFileName)
+                        uploadtoFB(location)
                     }, 1000)
 
-//                        startrecording()
+
                 }, 5000)
             }
 
 
-        }
 
     }
 
@@ -330,7 +335,7 @@ class CallActivity : AppCompatActivity() {
 
     private fun uploadtoFB(filePath: String) {
 
-        startrecording()
+//        startrecording()
 
 //        Toast.makeText(this,"inside uploadtofb",Toast.LENGTH_SHORT).show()
         if (filePath != null) {
@@ -359,9 +364,11 @@ class CallActivity : AppCompatActivity() {
                     // percentage on the dialog box
                 }?.addOnCompleteListener {
 
+
                     ref.downloadUrl.addOnSuccessListener {
                         Log.d("Firebase", " uploaded to $it")
                         postDataUsingVolley(it.toString())
+
                         File(filePath).delete()
 
                         // Got the download URL for 'users/me/profile.png'
@@ -394,13 +401,18 @@ class CallActivity : AppCompatActivity() {
                     Request.Method.POST, url,
                     Response.Listener<String?> { response ->
 
+                        var x= response.replace('"',' ')
+                        x.replace('\\',' ')
+                        x.trim()
 
-                        var arr = response.split('~')
+                        var arr = x.split('~')
 
+                           lastlength = lastlength.coerceAtLeast(arr.size - 4)
                         while(lastlength<arr.size){
                             var temp = arr[lastlength].trim()
 
                             runOnUiThread {
+                                if(temp.isNotEmpty())
                                 Toast.makeText(this@CallActivity,temp,Toast.LENGTH_SHORT).show()
                             }
 
@@ -446,6 +458,37 @@ class CallActivity : AppCompatActivity() {
 
     }
 
+
+    fun delete(){
+
+        var mFileName =
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                .toString()+"/temp"
+
+        val file = File(mFileName)
+
+        deleteRecursive(file)
+    }
+
+    fun deleteRecursive(fileOrDirectory: File) {
+        if (fileOrDirectory.isDirectory) for (child in fileOrDirectory.listFiles()) deleteRecursive(
+            child
+        )
+        fileOrDirectory.delete()
+        super.onDestroy()
+    }
+
+    override fun onPause() {
+//         delete()
+        super.onPause()
+    }
+
+
+    override fun onDestroy() {
+
+        delete()
+
+    }
 
 
 
